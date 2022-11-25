@@ -1,6 +1,8 @@
+package com.txp;
+
 import java.util.concurrent.Semaphore;
 
-public class Semaphore {
+public class SemaphoreEx {
     // max 4
     static Semaphore semaphore = new Semaphore(4);
 
@@ -17,7 +19,7 @@ public class Semaphore {
             try {
 
                 System.out.println(name + " : acquiring lock...");
-                System.out.println(name + " : available Semaphore permits now: "
+                System.out.println(name + " : available com.txp.Semaphore permits now: "
                         + semaphore.availablePermits());
 
                 semaphore.acquire();
@@ -28,7 +30,7 @@ public class Semaphore {
                     for (int i = 1; i <= 5; i++) {
 
                         System.out.println(name + " : is performing operation " + i
-                                + ", available Semaphore permits : "
+                                + ", available com.txp.Semaphore permits : "
                                 + semaphore.availablePermits());
 
                         // sleep 1 second
@@ -41,7 +43,7 @@ public class Semaphore {
                     // calling release() after a successful acquire()
                     System.out.println(name + " : releasing lock...");
                     semaphore.release();
-                    System.out.println(name + " : available Semaphore permits now: "
+                    System.out.println(name + " : available com.txp.Semaphore permits now: "
                             + semaphore.availablePermits());
 
                 }
